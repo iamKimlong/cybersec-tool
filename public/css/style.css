@@ -198,8 +198,6 @@
     border-radius: 5px;
 }
 
-/* Base Styles */
-
 body {
     font-family: sans-serif;
     margin: 0;
@@ -344,44 +342,8 @@ marquee {
     background-color: var(--primary-btn-hover-color);
 }
 
-
-/* Kbal Section */
-.kbal {
-    padding: 30px 0;
-    margin-top: var(--box-margin);
-}
-
-.kbal1 {
-    font-weight: bold;
-    color: var(--text-color);
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.kbal1 li {
-    font-size: var(--large-font-size);
-}
-
-.kbal1 li:hover {
-    color: var(--secondary-text-color);
-}
-
-.muymuy {
+.kabtictic {
     padding: 10px 0;
-}
-
-.kbal2,
-.kbal3,
-.kbal4,
-.kbal5,
-.kbal6 {
-    padding: 0 10px;
-    margin-top: 10px;
-}
-
-.kbal-list li {
-    margin-bottom: 5px;
 }
 
 .a4 {
@@ -475,7 +437,7 @@ marquee {
     color: var(--secondary-text-color);
 }
 
-.down .muymuy {
+.down .kabtictic {
     padding: 10px 0;
 }
 
