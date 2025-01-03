@@ -1,58 +1,105 @@
-# Adidas Cambodia Branch 
+## **Project: Cybersec Tools Shop**
 
-This is a basic e-commerce platform for Adidas products, built using Node.js, Express.js, and EJS. It demonstrates essential concepts like product listing, shopping cart functionality, and simple user authentication.
+### **Overview**
 
-## Key Features
+This project is a Node.js application for an online shop specializing in cybersecurity tools and equipment. It provides features for product management, user authentication, and a user-friendly interface. The application adheres to a Model-View-Controller (MVC) architecture for improved code organization and maintainability.
 
-*   **Product Listing:** Displays Adidas products.
-*   **Product Details:** Shows more information about individual products.
-*   **Add to Cart:** Allows users to add items to a shopping cart.
-*   **Shopping Cart (Modal):** View and manage cart items.
-*   **Checkout:** Simulates checkout process (no real transactions).
-*   **Basic User Auth:** Simple login and signup functionality.
-    * Admin users can also create, edit, and delete products.
-*   **Local Storage**: basic cart and session handling is done via local storage.
+### **Project Structure**
 
-## Technologies
+```
+cybersec-shop/
+├── config/
+│   ├── database.js 
+│   └── multer.js
+├── controllers/
+│   ├── index.js
+│   ├── product.js
+│   └── user.js
+├── models/
+│   ├── Product.js
+│   └── User.js
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/ 
+├── routes/
+│   ├── index.js
+│   ├── product.js
+│   └── user.js
+├── views/
+│   ├── index.ejs
+│   ├── product/
+│   │   ├── create.ejs
+│   │   ├── edit.ejs
+│   │   ├── index.ejs
+│   │   ├── show.ejs
+│   ├── user/
+│   │   └── login.ejs
+│   └── partials/
+│       ├── footer.ejs
+│       └── header.ejs
+├── .env
+├── .gitignore
+├── package.json
+├── server.js
+```
 
-*   **Node.js**
-*   **Express.js**
-*   **EJS**
-*   **HTML, CSS, JavaScript**
-*   **Bootstrap**
-*   **Font Awesome**
+**Key Components**
 
-## Setup
+- **Controllers:** Handle business logic for product interactions, user authentication, and order processing.
+- **Models:** Represent data structures for Products, Users, Orders, and other relevant entities.
+- **Routes:** Define application endpoints and map them to corresponding controllers.
+- **Views:** EJS templates for rendering dynamic HTML content, including product catalogs, shopping carts, and user accounts.
+- **Config:** Configuration files for database connection, file uploads, and other settings.
+- **Public:** Static assets like CSS, images, and potentially product manuals or documentation.
 
-1.  **Clone:**
-    ```bash
-    git clone <repository_url>
-    cd <project_directory>
-    ```
-2.  **Install:**
-    ```bash
-    npm install (packages are already provide)
-    ```
-3.  **Run:**
-    ```bash
-    node .\server.js
-    ```
-4.  **Open:** Go to `http://localhost:3000` in your browser.
+### **Features**
 
-## API Endpoints
+- **Product Management:**
+    - Create, read, update, and delete product records.
+    - Upload and display product images and technical specifications.
+    - Categorize products (e.g., network security, endpoint security, penetration testing).
+- **User Management:**
+    - User registration and login.
+    - Order history and tracking.
+    - Shopping cart functionality.
+- **Database Integration:**
+    - MySQL database for storing product, user, and order data.
+- **User Interface:**
+    - Dynamic web pages using EJS templates.
+    - User-friendly interface with clear navigation and product search.
 
-*   **`GET /product`**: List products.
-*   **`GET /product/:id`**: Product details.
-*   **`GET /api/cart`**: Get cart.
-*   **`POST /api/cart`**: Add to cart (`{ id: <product_id> }`).
-*   **`PUT /api/cart/:id`**: Update cart quantity (`{ quantity: <new_quantity> }`).
-*   **`DELETE /api/cart/:id`**: Remove from cart.
-*  **`GET /product/admin/product`**: Admin Product page.
-*   **`/login`, `/register`**: Authentication routes.
-*   **`/logout`**: logout route.
+### **Technologies**
 
-## Notes
+- Node.js
+- Express.js
+- MySQL
+- EJS
+- Multer
+- (Optional: Authentication library like Passport.js)
+- (Optional: Payment gateway integration)
 
-*   **Data:** Product and user data is stored in-memory (not persistent).
-*   **Auth:** Very basic authentication.
-*   **Modals**: Modals are used to display the cart and checkout functionality.
+### **Installation**
+
+1. Clone the repository: `git clone <repository-url>`
+2. Install dependencies: `npm install`
+3. Create a `.env` file from `.env.example` and configure environment variables.
+4. Start the server: `node server.js`
+
+### **Database**
+
+- Create a MySQL database named `cybersec_shop`.
+- Define tables for `products`, `users`, `orders`, and other necessary entities.
+
+### **Future Enhancements**
+
+- Implement user authentication and authorization.
+- Add search and filtering capabilities for products.
+- Integrate with a payment gateway.
+- Implement role-based access control (e.g., admin, customer).
+- Improve UI/UX with a more professional and secure design.
+- Consider implementing a content management system (CMS) for easier product updates.
+
+### **Contributing**
+
+Contributions are welcome! Please create a pull request with your changes.
