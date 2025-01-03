@@ -18,17 +18,17 @@
     <header class="header bg-light shadow-sm">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="header-content d-flex align-items-center">
-                <a class="text-style" href="/"><i class="fa-solid fa-house a1"></i></a>
+                <a href="/"><i class="fa-solid fa-house a1 text-style"></i></a>
                 <a class="text-style" href="/">HOME</a>
             </div>
             <div>
                 <span id="logged-in-message"></span>
                 <% if (user) { %>
                     <form action="/logout" method="POST" style="display:inline;">
-                        <button class="btn btn-outline-dark" id="profile-btn">Logout</button>
+                        <button class="btn btn-outline-warning" id="profile-btn">Logout</button>
                     </form>
                     <% } else { %>
-                        <a href="/login" class="btn btn-outline-dark">Login</a>
+                        <a href="/login" class="btn btn-outline-warning">Login</a>
                         <a href="/register" class="btn btn-outline-dark">Sign Up</a>
                         <% } %>
 

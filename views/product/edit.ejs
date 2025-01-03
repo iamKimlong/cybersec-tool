@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/img/pngwing.com(58).png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -15,32 +17,33 @@
 </head>
 
 <body>
-     <header class="header bg-light shadow-sm">
+    <header class="header bg-light shadow-sm">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="header-content d-flex align-items-center">
-                <a href="/"><i class="fa-solid fa-house a1"></i></a>
-                <a class="text-gradient" href="/">HOME</a>
+                <a href="/"><i class="fa-solid fa-house a1 text-style"></i></a>
+                <a class="text-style" href="/">HOME</a>
+
             </div>
             <div>
                 <span id="logged-in-message"></span>
                 <% if (user) { %>
                     <form action="/logout" method="POST" style="display:inline;">
-                        <button  class="btn btn-outline-dark" >Logout</button>
+                        <button class="btn btn-outline-dark">Logout</button>
                     </form>
                     <% } else { %>
-                     <a href="/login"  class="btn btn-outline-dark" id="login-btn">Login</a>
-                        <a href="/register"  class="btn btn-outline-dark" id="sign-up-btn">Sign Up</a>
-                    <% } %>
+                        <a href="/login" class="btn btn-outline-dark" id="login-btn">Login</a>
+                        <a href="/register" class="btn btn-outline-dark" id="sign-up-btn">Sign Up</a>
+                        <% } %>
 
-                <% if(user && user.isAdmin) { %>
-                    <a href="/product" class="btn btn-outline-dark">Admin</a>
-                <% } %>
-                <button id="cart-btn" class="btn btn-outline-dark">Open Cart</button>
+                            <% if(user && user.isAdmin) { %>
+                                <a href="/product" class="btn btn-outline-dark">Admin</a>
+                                <% } %>
+                                    <button id="cart-btn" class="btn btn-outline-dark">Open Cart</button>
             </div>
         </div>
     </header>
     <div class="container">
-       <h1>Edit Product</h1>
+        <h1>Edit Product</h1>
         <form action="/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Product Name:</label>
@@ -52,18 +55,22 @@
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description" required><%= product.description %></textarea>
+                <textarea id="description" name="description" required>
+                    <%= product.description %>
+                </textarea>
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
                 <input type="file" id="image" name="image" accept="image/*">
                 <% if(product.image) { %>
                     <img src="<%= product.image %>" alt="<%= product.name %>" class="product-img">
-                <% } %>
+                    <% } %>
             </div>
-            <button type="submit" class ="add-to-cart-btn w-100"style="text-decoration:none;text-align:center;">Update Product</button>
+            <button type="submit" class="add-to-cart-btn w-100" style="text-decoration:none;text-align:center;">Update
+                Product</button>
         </form>
     </div>
     <script src="/script.js"></script>
 </body>
+
 </html>

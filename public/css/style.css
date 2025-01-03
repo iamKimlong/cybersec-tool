@@ -311,9 +311,11 @@ marquee {
 }
 
 .product-img {
-    width: 100%;
+    width: 18vh;
     height: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .product-name {
